@@ -1,0 +1,6 @@
+#!/bin/sh
+logger "FIREWALL-START: Starting ..."
+
+/jffs/firewall/initfw_cydrop.sh
+
+logger "FIREWALL-START: Finished"
