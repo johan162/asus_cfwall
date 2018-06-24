@@ -9,7 +9,7 @@ Version: 24 june 2018
 
 ## SUMMARY
 
-This is a set of scripts to block access to an Asus router on country level. This is accomplished by using iptable rules. All countries other than those specified ina  white list are blocked.
+This is a set of scripts to block access to an Asus router on country level. This is accomplished by using iptable rules. All countries other than those specified in a white list are blocked. This adds an extra layer of protection from script-kiddies since most home router installations are used within a single country.
 
 
 ## DESCRIPTION
@@ -34,9 +34,11 @@ The service start script is exactly the same
 
 ## USAGE
 
+**NOTE:** *Remember to first enable the  "/jffs" partition in the router settings and disable the routers firewall.*
+
 1. After the "/jffs" partition has been enabled store the *firewall-start* script under the "/jffs/scripts" directory.
 
-2. Store the initfw_cydrop.sh under "/jffs/firewall"
+2. Create the directory "/jffs/firewall". Depending on your router copy the approprate version of "initfw_cydrop.sh" to "/jffs/firewall"
 
 3. The countries to be added to the whitelistj are specified in "/jffs/firewall/white.conf" with one country per line defined by their ISO 2-letter code in lower case. At minimum the home country needs to be added in the whitelist if you want to be able to access anything from the outside of the router such as a server that are behind the router.
 
@@ -44,11 +46,11 @@ The service start script is exactly the same
 
 ## FILES
 
-* firewall-start . Utility script to be put in the scripts directory to run the setup script at reboot
+* firewall-start . Utility script to be put in the "/jffs/scripts" directory to run the setup script at (re)-boot.
 
-* "AC66x/initfw_cydrop.sh"  . Setup script to create rules
+* "AC66x/initfw_cydrop.sh"  . Setup script to create rules for the AC66x family.
 
-* "AC68x/initfw_cydrop.sh"  . Setup script to create rules
+* "AC68x/initfw_cydrop.sh"  . Setup script to create rules for the AC68x family.
 
 * "lsfor.sh" . Utility script to list FORWARD table chains
 
