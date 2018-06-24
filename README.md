@@ -1,5 +1,7 @@
-# README asus_cfwall
+# README asus_cfwall. 
 **NOTE:**
+
+Version: 24 june 2018
 
 * It is recommended that the Asus Merlin firmware is used. This is an optional firmware for the router with some significant improvements but still close enough to the original to be stable and recognisable.
 
@@ -20,11 +22,21 @@ The IP sets for countries that are marked for the whitelist are automatically do
 
 When using the Merlin variant scripts that are stored under /jffs/scripts will be automatically run when the router is rebooted.
 
+## SUPPORTED ROUTERS
+
+The script comes in two variants
+
+1. AC66x. For any routers in the AC66x series (such as AC66U, AC66N)
+
+2. AC68x. For newer routers in the AC68x series (such AS AC68U). This family uses a newer version of iptables and Linux kernel and hence requires some minor but incompatible changes from the version for AC66
+
+The service start script is exactly the same
+
 ## USAGE
 
-1. After the /jffs partition has been enabled store the firewall-start script under the "/jffs/scripts" directory.
+1. After the "/jffs" partition has been enabled store the *firewall-start* script under the "/jffs/scripts" directory.
 
-2. Store the initfw_cydrop.sh under /jffs/firewall
+2. Store the initfw_cydrop.sh under "/jffs/firewall"
 
 3. The countries to be added to the whitelistj are specified in "/jffs/firewall/white.conf" with one country per line defined by their ISO 2-letter code in lower case. At minimum the home country needs to be added in the whitelist if you want to be able to access anything from the outside of the router such as a server that are behind the router.
 
@@ -34,8 +46,10 @@ When using the Merlin variant scripts that are stored under /jffs/scripts will b
 
 * firewall-start . Utility script to be put in the scripts directory to run the setup script at reboot
 
-* initfw_cydrop.sh  . Setup script to create rules
+* "AC66x/initfw_cydrop.sh"  . Setup script to create rules
 
-* lsfro.sh . Utility script to list FORWARD table chains
+* "AC68x/initfw_cydrop.sh"  . Setup script to create rules
 
-* lsinp.sh . Utility script to list INPUT table chains
+* "lsfor.sh" . Utility script to list FORWARD table chains
+
+* "lsinp.sh" . Utility script to list INPUT table chains
