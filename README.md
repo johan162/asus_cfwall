@@ -1,11 +1,11 @@
-# README asus_cfwall. 
+# README asus_cfwall.
 **NOTE:**
 
 Version: 24 june 2018
 
 * It is recommended that the Asus Merlin firmware is used. This is an optional firmware for the router with some significant improvements but still close enough to the original to be stable and recognisable.
 
-* The Asus builtin firewall should be disabled since they might interfer with this set of rules.
+* The Asus built-in firewall should be disabled since they might interfer with this set of rules.
 
 ## SUMMARY
 
