@@ -79,12 +79,10 @@ if [ ! -e whitelist.ipset  ]; then
     ipset   --save whitelist > whitelist.ipset
     logger  "CYDROP: New whitelist saved."
 
-    cd /
-
 else
 
     # First check if whitelist is already installed in netfilter
-    echo iptables  -L FORWARD | grep whitelist > /dev/null 2>&1
+    iptables  -L FORWARD | grep whitelist > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         logger  "CYDROP ERROR: Whitelist is in use. No changes made" >&2
         exit 1
